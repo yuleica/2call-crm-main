@@ -150,17 +150,19 @@ const Home = () => {
         })
         const data = await res.json()
         console.log(data);
+        toast.success('Datos de contacto modificado.');
         if (!res.ok) {
           toast.error(res.error)
       }
-      else{
-        setValue('phone', res.phone);
-        setValue('rut', res.rut);
-        setValue('firstName', res.name.firstName);
-        setValue('lastName', res.name.lastName);
-        toast.success('Datos de contacto guardado.');
-        handleReset();
-      }
+        else{
+          console.log('estoy en el else!!!!!!!!!!!!!!!');
+          setValue('phone', res.phone);
+          setValue('rut', res.rut);
+          setValue('firstName', res.name.firstName);
+          setValue('lastName', res.name.lastName);
+          toast.success('Datos de contacto guardado.');
+          handleReset();
+        }
         return data; 
     } catch (err) {
         console.error(err)        
