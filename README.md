@@ -20,3 +20,5 @@ Se debe crear un usuario mediante una solicitud POST al endpoint /api/auth (inso
 }
 ```
 # 2call-crm-main
+este repositorio es antiguo......
+creado porque hice mal el fork del proyecto..
