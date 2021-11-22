@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Home from './components/Home';
 import Page404 from './components/Page404';
+import Report from './components/Report';
 
 // Context
 import { AuthContextProvider } from './context/AuthContext';
@@ -17,6 +18,7 @@ import PrivateRoute from './routes/PrivateRoute';
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   return (
@@ -35,6 +37,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/Report" component={Report} />
             <Route exact path="/login" component={Login} />
             <Route component={Page404} />
           </Switch>

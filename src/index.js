@@ -40,6 +40,24 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/report', async (req, res, next) => {
+  try {
+      const user = await User.find(req,res);
+
+      if (!user) {
+        res.status(404);
+        throw new Error('Error al cargar la base de datos.');
+      }
+
+      res.status(200);
+      res.json(user);
+
+    } catch (error) {
+      next(error);
+    }
+  });
+
+
 // Users
 app.post('/api/users', async (req, res, next) => {
   try {
@@ -135,6 +153,7 @@ app.patch('/api/users/break', async (req, res, next) => {
     next(error);
   }
 });
+
 
 // Auth
 app.get('/api/auth', (req, res, next) => {
